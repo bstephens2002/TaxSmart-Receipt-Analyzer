@@ -1,6 +1,6 @@
 # TaxSmart Receipt Analyzer: AI-Powered Expense Management
 
-![TaxSmart Logo](https://via.placeholder.com/150x150.png?text=TaxSmart+Logo)
+![TaxSmart Logo](assets/TaxSmart.jpg)
 
 [![AI-Powered](https://img.shields.io/badge/AI-Powered-blue.svg)](https://github.com/bstephens2002/TaxSmart-Receipt-Analyzer)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
