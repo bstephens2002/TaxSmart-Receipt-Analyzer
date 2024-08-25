@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/_head.ejs') %>
+  <body>
+<%- include('partials/_header.ejs') %>
+    <main role="main" class="container mt-4">
+      <div class="text-center">
+        <h1>TaxSmart-Receipt-Analyzer</h1>
+      </div>
+      <div id="data-display" class="container mt-3"></div> <!-- Container for the data table -->
+      <button id="export-btn" class="btn btn-primary mt-3 mb-5">Export to CSV</button> <!-- Export button -->
+    </main>
+  </body>
+<%- include('partials/_footer.ejs') %>
+  <script src="/js/main.js"></script>
+</html>

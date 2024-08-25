@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/_head.ejs') %>
+  <body>
+<%- include('partials/_header.ejs') %>
+    <main role="main">
+      <div class="container mt-5">
+        <h2>Register</h2>
+        <form action="/auth/register" method="POST">
+          <div class="mb-3">
+            <input type="text" name="username" placeholder="Username" required class="form-control">
+          </div>
+          <div class="mb-3">
+            <input type="password" name="password" placeholder="Password" required class="form-control">
+          </div>
+          <div class="mb-3">
+            <select name="businessCategory" required class="form-control">
+              <option value="">Select Business Category</option>
+              <option value="Agriculture">Agriculture, Forestry, Fishing and Hunting</option>
+              <option value="Mining">Mining, Quarrying, and Oil and Gas Extraction</option>
+              <option value="Construction">Construction</option>
+              <option value="Manufacturing">Manufacturing</option>
+              <option value="WholesaleTrade">Wholesale Trade</option>
+              <option value="RetailTrade">Retail Trade</option>
+              <option value="Transportation">Transportation and Warehousing</option>
+              <option value="Information">Information</option>
+              <option value="Finance">Finance and Insurance</option>
+              <option value="RealEstate">Real Estate and Rental and Leasing</option>
+              <option value="Professional">Professional, Scientific, and Technical Services</option>
+              <option value="Management">Management of Companies and Enterprises</option>
+              <option value="Administrative">Administrative and Support Services</option>
+              <option value="Educational">Educational Services</option>
+              <option value="HealthCare">Health Care and Social Assistance</option>
+              <option value="Arts">Arts, Entertainment, and Recreation</option>
+              <option value="Accommodation">Accommodation and Food Services</option>
+              <option value="OtherServices">Other Services (except Public Administration)</option>
+              <option value="PublicAdministration">Public Administration</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <textarea name="businessDescription" placeholder="Describe your business (max 150 characters)" maxlength="150" class="form-control"></textarea>
+          </div>
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary mr-2">Register</button>
+            Already have an account? <a href="/auth/login">Login</a>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+<%- include('partials/_footer.ejs') %>
+</html>
