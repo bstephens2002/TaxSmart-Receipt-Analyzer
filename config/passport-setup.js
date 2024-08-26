@@ -3,10 +3,9 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require('../models/User');
 
 passport.use(new GoogleStrategy({
-    clientID: '',
-    clientSecret: '',
-    callbackURL: "/auth/google/redirect"
-  },
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL: process.env.GOOGLE_CALLBACK_URL  },
   async (accessToken, refreshToken, profile, done) => {
     try {
       // Check if user already exists in our db

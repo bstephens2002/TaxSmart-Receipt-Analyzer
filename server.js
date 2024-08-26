@@ -7,7 +7,7 @@ const MongoStore = require('connect-mongo');
 const passport = require('passport');
 const authRoutes = require("./routes/authRoutes");
 const receiptRoutes = require('./routes/receiptRoutes');
-const passportSetup = require('./config/passport-setup');
+//const passportSetup = require('./config/passport-setup');
 
 if (!process.env.DATABASE_URL || !process.env.SESSION_SECRET) {
   console.error("Error: config environment variables not set. Please create/edit .env configuration file.");

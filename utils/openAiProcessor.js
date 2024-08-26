@@ -55,7 +55,7 @@ async function processTextWithOpenAI(receiptText, fileName, req, businessCategor
     }
       console.log('Sending text to Groq for processing.');
       const completion = await groq.chat.completions.create({
-        model: "mixtral-8x7b-32768",
+        model: process.env.GROQ_MODEL,
         messages: [
           { 
             role: "system", 
