@@ -30,6 +30,8 @@ TaxSmart Receipt Analyzer leverages cutting-edge AI technologies to provide an a
 - **Smart Subject Line Generation**: Uses natural language processing capabilities of the configured LLM to automatically create concise, context-aware subject lines for each expense.
 - **Adaptable AI Integration**: The project is designed to work with various LLMs, with default configuration for Groq's high-performance inference.
 
+![TaxSmart User Interface](assets/Screenshot.png)
+
 ## 🧠 How It Works
 
 1. **Image Upload**: User uploads a receipt image through the web interface.
