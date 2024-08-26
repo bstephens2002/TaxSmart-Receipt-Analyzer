@@ -92,9 +92,10 @@ Create a `.env` file in the project root and add the following variables:
 
 ```
 PORT=3000
-MONGODB_URI=mongodb://localhost:27017/taxsmart
-AI_SERVICE_API_KEY=your_ai_service_api_key
-AI_SERVICE_URL=https://api.groq.com/openai/v1/chat/completions
+DATABASE_URL=mongodb://localhost/taxsmart
+SESSION_SECRET=your_generated_secret_here
+GROQ_API_KEY=your_groq_api_key_here
+GROQ_MODEL=mixtral-8x7b-32768
 ```
 
 Replace the `MONGODB_URI` with your actual MongoDB connection string and `AI_SERVICE_API_KEY` with your AI service API key.
