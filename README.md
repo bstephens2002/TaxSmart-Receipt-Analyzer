@@ -2,29 +2,44 @@
 
 ![TaxSmart Logo](assets/TaxSmart.jpg)
 
-[![AI-Powered](https://img.shields.io/badge/AI-Powered-blue.svg)](https://github.com/bstephens2002/TaxSmart-Receipt-Analyzer)
+[![AI-Enhanced](https://img.shields.io/badge/AI-Enhanced-blue.svg)](https://github.com/bstephens2002/TaxSmart-Receipt-Analyzer)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/Node.js-14.x-green.svg)](https://nodejs.org/)
 [![Express.js](https://img.shields.io/badge/Express.js-4.x-lightgrey.svg)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-4.x-green.svg)](https://www.mongodb.com/)
 
-TaxSmart Receipt Analyzer is a cutting-edge, AI-driven Node.js/Express.js application that revolutionizes expense management for small business owners and self-employed individuals. By harnessing the power of artificial intelligence and machine learning, TaxSmart automates and streamlines the tedious process of categorizing business expenses according to IRS Schedule C categories.
+TaxSmart Receipt Analyzer is an innovative Node.js/Express.js application that simplifies expense management for small business owners and self-employed individuals. By leveraging advanced AI technologies, TaxSmart streamlines the process of categorizing business expenses according to IRS Schedule C categories.
 
-## 🤖 AI-Powered Features
-
-TaxSmart leverages cutting-edge AI technologies to provide an unparalleled expense management experience:
-
-- **Intelligent OCR**: Utilizes Tesseract.js, an advanced OCR engine, to accurately extract text from receipt images with machine learning-based recognition.
-- **AI-Driven Categorization**: Employs Groq's high-speed AI inference to instantly categorize expenses according to IRS Schedule C categories, learning and adapting to your business's unique spending patterns.
-- **Smart Subject Line Generation**: Uses natural language processing (NLP) to automatically create concise, context-aware subject lines for each expense, providing clear justifications for tax purposes.
-- **Continuous Learning**: Our AI models continuously improve their accuracy by learning from user interactions and feedback, ensuring ever-increasing precision in expense categorization.
+Our application combines the power of Optical Character Recognition (OCR) with state-of-the-art Language Models to automate receipt analysis and categorization. TaxSmart is designed to make optimal use of configurable AI services, providing efficient and accurate expense categorization.
 
 ## 🚀 Key Features
 
-- **Effortless Receipt Upload**: Quickly digitize your receipts with our user-friendly interface.
-- **Real-Time Processing**: Experience lightning-fast AI-powered analysis and categorization.
-- **IRS Compliance**: AI ensures your expenses align with the latest IRS Schedule C categories.
-- **Intelligent Reporting**: Generate AI-enhanced reports for simplified tax preparation and business insights.
-- **Time-Saving Automation**: Significantly reduce manual data entry and categorization efforts.
+- Automates the tedious process of expense categorization
+- Utilizes advanced OCR for accurate receipt text extraction
+- Leverages configurable Language Models for intelligent expense analysis
+- Generates context-aware subject lines for each expense
+- Adaptable to different AI services, with default setup for high-speed inference
+- Secure data storage using MongoDB
+
+## 🤖 AI-Powered Features
+
+TaxSmart Receipt Analyzer leverages cutting-edge AI technologies to provide an advanced expense management experience:
+
+- **Intelligent OCR**: Utilizes Tesseract.js, an advanced OCR engine, to accurately extract text from receipt images.
+- **AI-Driven Categorization**: Employs a configurable Language Model (LLM), set up for high-speed inference through Groq, to categorize expenses according to IRS Schedule C categories.
+- **Smart Subject Line Generation**: Uses natural language processing capabilities of the configured LLM to automatically create concise, context-aware subject lines for each expense.
+- **Adaptable AI Integration**: The project is designed to work with various LLMs, with default configuration for Groq's high-performance inference.
+
+## 🧠 How It Works
+
+1. **Image Upload**: User uploads a receipt image through the web interface.
+2. **OCR Processing**: Tesseract.js extracts text from the image using advanced optical character recognition.
+3. **Text Preparation**: The extracted text is processed and formatted for optimal AI analysis.
+4. **AI Analysis**: The prepared text is sent to the configured Language Model (default setup uses Groq for high-speed inference) for analysis.
+5. **Smart Categorization**: Based on the AI analysis, the expense is categorized according to IRS Schedule C guidelines.
+6. **Subject Line Generation**: The AI generates a concise, relevant subject line for the expense.
+7. **User Verification**: Results, including the category and subject line, are presented for user review and adjustment if necessary.
+8. **Data Storage**: Confirmed data is securely stored in MongoDB for future reference and reporting.
 
 ## 🛠️ Installation
 
@@ -41,24 +56,17 @@ TaxSmart leverages cutting-edge AI technologies to provide an unparalleled expen
    npm install
    ```
 4. Set up Tesseract.js (see Tesseract Setup section below)
+5. Set up MongoDB (see MongoDB Setup section below)
+6. Configure environment variables (see Configuration section below)
 
 ## 📊 Usage
 
-1. Start the AI-powered server:
+1. Start the server:
    ```
    npm start
    ```
 2. Open your browser and navigate to `http://localhost:3000`
-3. Upload a receipt image and watch our AI work its magic!
-
-## 🧠 How It Works
-
-1. **Image Upload**: User uploads a receipt image through the web interface.
-2. **OCR Processing**: Tesseract.js AI extracts text from the image.
-3. **AI Analysis**: Groq's neural networks analyze the extracted text.
-4. **Smart Categorization**: AI categorizes the expense based on IRS Schedule C.
-5. **NLP Summary**: AI generates a smart subject line for the expense.
-6. **User Verification**: Results are presented for user confirmation or adjustment.
+3. Upload a receipt image and watch the magic happen!
 
 ## 🔧 Tesseract.js Setup
 
@@ -67,27 +75,45 @@ To set up Tesseract.js for OCR functionality:
 1. Download the English trained data file:
    - Go to https://github.com/tesseract-ocr/tessdata
    - Download the `eng.traineddata` file
-
 2. Place the downloaded file:
    - Create a `tessdata` directory in your project root if it doesn't exist
    - Move `eng.traineddata` into the `tessdata` directory
 
-3. Configure the application:
-   - Ensure the Tesseract.js configuration in the app points to this local `tessdata` directory
+## 🍃 MongoDB Setup
 
-## 🔮 Future AI Enhancements
+1. Install MongoDB on your system if you haven't already. Follow the official MongoDB installation guide for your operating system.
+2. Start the MongoDB service on your machine.
+
+Note: The application will automatically create the necessary database and collections when it first runs, so you don't need to manually create them.
+
+## ⚙️ Configuration
+
+Create a `.env` file in the project root and add the following variables:
+
+```
+PORT=3000
+MONGODB_URI=mongodb://localhost:27017/taxsmart
+AI_SERVICE_API_KEY=your_ai_service_api_key
+AI_SERVICE_URL=https://api.groq.com/openai/v1/chat/completions
+```
+
+Replace the `MONGODB_URI` with your actual MongoDB connection string and `AI_SERVICE_API_KEY` with your AI service API key.
+
+## 🔮 Future Enhancements
 
 - Anomaly detection to flag unusual expenses
 - Predictive analytics for expense forecasting
-- Multi-language receipt support through AI translation
-- Integration with popular accounting software using AI-powered data mapping
+- Multi-language receipt support
+- Integration with popular accounting software
 
 ## 🛡️ Technologies Used
 
 - Node.js
 - Express.js
+- MongoDB
 - Tesseract.js for OCR
-- Groq for AI inference
+- Configurable Language Model (default setup for Groq)
+- React.js for the frontend (if applicable)
 
 ## 🤝 Contributing
 
